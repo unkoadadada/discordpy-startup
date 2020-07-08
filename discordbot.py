@@ -2,6 +2,8 @@ from discord.ext import commands
 import os
 import traceback
 
+client = discord.Client()
+
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
@@ -22,7 +24,7 @@ async def こんにちは(ctx):
     await ctx.send('うんち！')
 
     
-@bot.command()
+@client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
