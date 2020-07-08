@@ -22,7 +22,7 @@ async def こんにちは(ctx):
     await ctx.send('うんち！')
 
     
-@client.event
+@bot.command()
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
